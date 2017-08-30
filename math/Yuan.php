@@ -2,7 +2,7 @@
 /**
  * @author tongsq
  * @since 2017/8/27
- * @desc 
+ * @desc
  */
 namespace algo\math;
 
