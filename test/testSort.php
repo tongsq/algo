@@ -23,6 +23,7 @@ function testSort(int $count)
 	//CommonTools::echoArr($arr3, ', ');
 
 	Debug::showLogTime();
+	Debug::clearLogTime();
 	echo "\n\n";
 }
 

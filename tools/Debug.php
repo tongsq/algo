@@ -10,8 +10,14 @@ class Debug{
 			$timelog->add($arg);
 		}
 	}
-	static function showLogTime(){
+	static function showLogTime()
+	{
 		TimeLog::getInstance()->showTime();
+	}
+
+	static function clearLogTime()
+	{
+		TimeLog::getInstance()->clearTime();
 	}
 }
 
@@ -48,5 +54,10 @@ class TimeLog{
 		foreach($this->times as $key=>$value){
 			echo "{$key} : {$value}\n";
 		}
+	}
+	public function clearTime()
+	{
+		$this->logs = array();
+		$this->times = array();	
 	}
 }
