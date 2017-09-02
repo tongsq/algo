@@ -2,6 +2,7 @@
 include dirname(__DIR__) . '/init.php';
 use algo\sort\BubbleSort;
 use algo\sort\QuickSort;
+use algo\sort\InsertionSort;
 use algo\tools\MathTools;
 use algo\tools\CommonTools;
 use algo\tools\Debug;
@@ -19,8 +20,10 @@ function testSort(int $count)
 	//CommonTools::echoArr($arr2, ', ');
 	Debug::logTime('quick sort', 'bubble sort');
 	$arr3 = $bubble->sort($arr);
-	Debug::logTime('bubble sort');
+	Debug::logTime('bubble sort','insertion sort');
 	//CommonTools::echoArr($arr3, ', ');
+    $arr4 = InsertionSort::sort($arr);
+    Debug::logTime('insertion sort');
 
 	Debug::showLogTime();
 	Debug::clearLogTime();
@@ -31,3 +34,4 @@ testSort(10);
 testSort(100);
 testSort(1000);
 testSort(10000);
+testSort(100000);
