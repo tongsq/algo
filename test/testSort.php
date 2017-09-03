@@ -3,6 +3,7 @@ include dirname(__DIR__) . '/init.php';
 use algo\sort\BubbleSort;
 use algo\sort\QuickSort;
 use algo\sort\InsertionSort;
+use algo\sort\MergeSort;
 use algo\tools\MathTools;
 use algo\tools\CommonTools;
 use algo\tools\Debug;
@@ -23,8 +24,9 @@ function testSort(int $count)
 	Debug::logTime('bubble sort','insertion sort');
 	//CommonTools::echoArr($arr3, ', ');
     $arr4 = InsertionSort::sort($arr);
-    Debug::logTime('insertion sort');
-
+    Debug::logTime('insertion sort', 'merge sort');
+    $arr5 = MergeSort::sort($arr);
+    Debug::logTime('merge sort');
 	Debug::showLogTime();
 	Debug::clearLogTime();
 	echo "\n\n";
