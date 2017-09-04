@@ -12,7 +12,7 @@ function testSort(int $count)
 {
 	echo "the count is : {$count}\n";
 	Debug::logTime('create array');
-	$arr = MathTools::randomIntArr(0, 10000, $count);
+	$arr = MathTools::randomIntArr(0, 10000000, $count);
 	//CommonTools::echoArr($arr, ', ');
 	$quick = new QuickSort();
 	$bubble = new BubbleSort();
@@ -31,9 +31,10 @@ function testSort(int $count)
 	Debug::clearLogTime();
 	echo "\n\n";
 }
-
+ini_set('memory_limit', '1024M');
 testSort(10);
 testSort(100);
 testSort(1000);
 testSort(10000);
-testSort(100000);
+//testSort(50000);
+//testSort(1000000);

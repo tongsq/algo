@@ -52,7 +52,7 @@ class TimeLog{
 	public function showTime()
 	{
 		foreach($this->times as $key=>$value){
-			echo "{$key} : {$value}\n";
+			echo "\033[32m{$key} : {$value}\033[0m\n";
 		}
 	}
 	public function clearTime()
