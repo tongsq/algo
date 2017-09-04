@@ -23,21 +23,23 @@ class MergeSort{
     }
 
     private static function merge(array &$arr, int $p, int $q, int $r){
-        $arr_tmp = $arr;
+        $arr_tmp = array();
         $q_tmp = $q;
         $i = $p;
         $q++;
         while($p<=$q_tmp || $q<=$r){
-            if ($q > $r || ($p<=$q_tmp && $arr_tmp[$p]<=$arr_tmp[$q])){
-                $arr[$i] = $arr_tmp[$p];
+            if ($q > $r || ($p<=$q_tmp && $arr[$p]<=$arr[$q])){
+                $arr_tmp[$i] = $arr[$p];
                 $p++;
                 $i++;
             }else{
-                $arr[$i] = $arr_tmp[$q];
+                $arr_tmp[$i] = $arr[$q];
                 $q++;
                 $i++;
             }
         }
+		foreach($arr_tmp as $key=>$value){
+			$arr[$key] = $value;
+		}
     }
 }
-
