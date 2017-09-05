@@ -15,10 +15,18 @@ class MergeSort{
 
     private static function mergeSort(array &$arr,int $p,int $r){
         if ($p<$r){
-            $q = (int) (($r + $p) / 2);
-            self::mergeSort($arr, $p, $q);
-            self::mergeSort($arr, $q+1, $r);
-            self::merge($arr, $p, $q, $r);
+			if (($r - $p) == 1){
+				if ($arr[$r]<$arr[$p]){
+					$tmp = $arr[$p];
+					$arr[$p] = $arr[$r];
+					$arr[$r] = $tmp;
+				}
+			}else{
+            	$q = (int) (($r + $p) / 2);
+            	self::mergeSort($arr, $p, $q);
+            	self::mergeSort($arr, $q+1, $r);
+            	self::merge($arr, $p, $q, $r);
+			}
         }
     }
 
@@ -43,3 +51,7 @@ class MergeSort{
 		}
     }
 }
+
+//$arr = array(98,56,45,22,77);
+//$arr2 = MergeSort::sort($arr);
+//var_dump($arr2);
