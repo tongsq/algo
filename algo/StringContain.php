@@ -11,3 +11,16 @@ function StringContain(string $strA, string $strB){
     return true;
 }
 var_dump(StringContain('ABCDAA', 'BDACCCC'));
+
+//回文判断
+function IsPalindrome(string $str){
+    $len = strlen($str);
+    for($i=0,$j=$len-1; $i<$j; $i++,$j--){
+        if ($str[$i] !== $str[$j]){
+            return false;
+        }
+    }
+    return true;
+}
+$str = 'abccba';
+var_dump(IsPalindrome($str));
